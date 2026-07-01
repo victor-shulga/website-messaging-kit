@@ -9,13 +9,15 @@ Proven on a live client build (2026-07). Repeat for any client.
 ## What's in here
 
 ```
-skills/website-copy-reframe/   the engine (Claude Code skill) — audit | homepage | service-page
+skills/website-copy-reframe/   copy engine (Claude Code skill) — audit | homepage | service-page
+skills/site-audit/             technical engine (Claude Code skill) — UX · a11y · perf · bugs
 ```
 
-Companion client-facing docs (Framework Guide + Template Pack) live in the private workspace,
-not in this public repo.
+Two audits, one rebuild: **messaging** (does the copy convert) + **technical** (does the site
+work). Run both to baseline a site before a rewrite. Companion client-facing docs (Framework
+Guide + Template Pack) live in the private workspace, not in this public repo.
 
-## The skill — 3 modes
+## The copy skill — 3 modes
 
 Install: copy `skills/website-copy-reframe/` into `~/.claude/skills/`.
 
@@ -29,17 +31,26 @@ All three share ONE copywriting canvas (audience → champion → situation → 
 limitations → problems → capabilities → features → benefits) and a **proof-bank** step
 (inventory real numbers/cases/testimonials, source-or-cut, before writing).
 
+## The technical skill — `site-audit`
+
+Install: copy `skills/site-audit/` into `~/.claude/skills/`. Crawls the site and scores four
+dimensions — **UX**, **accessibility** (WCAG 2.1 AA), **performance** (Core Web Vitals / Lighthouse),
+**functional bugs** (broken links, console errors, responsive breakage) — into a severity-ranked
+`site-audit-report.md` with a concrete fix per finding. The engineering companion to the messaging
+audit; run both before a rebuild.
+
 ## Process
 
 1. **Ingest** — scrape the live site + pull the client's positioning/ICP docs.
-2. **Audit** (`audit` mode) → scorecard + gaps (the case for the rewrite).
-3. **Proof bank** — inventory real numbers, cases, testimonials, trust.
-4. **Canvas** — one primary use case, vertical positioning, written to the champion.
-5. **Homepage** (`homepage` mode) — Hero/Problem/Solution + sections.
-6. **Service pages** (`service-page` mode) — one per offer, SEO-mapped, colour-coded.
-7. **Design system** — `design-system-generator` skill → brand tokens + Netlify.
-8. **Blueprint** — single-file HTML: sitemap + rendered homepage preview.
-9. **Handoff** — one doc: links + what we did + what the client does next.
+2. **Audit — messaging** (`website-copy-reframe` audit mode) → scorecard + gaps.
+3. **Audit — technical** (`site-audit`) → UX/a11y/perf/bug report. Baseline before rebuild.
+4. **Proof bank** — inventory real numbers, cases, testimonials, trust.
+5. **Canvas** — one primary use case, vertical positioning, written to the champion.
+6. **Homepage** (`homepage` mode) — Hero/Problem/Solution + sections.
+7. **Service pages** (`service-page` mode) — one per offer, SEO-mapped, colour-coded.
+8. **Design system** — `design-system-generator` skill → brand tokens + Netlify.
+9. **Blueprint** — single-file HTML: sitemap + rendered homepage preview.
+10. **Handoff** — one doc: links + what we did + what the client does next.
 
 ## Rules
 
