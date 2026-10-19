@@ -67,3 +67,7 @@ look alongside the copy. Client worked-examples are kept private, not in this re
 
 ---
 Built by Viktor Shulha
+
+---
+
+Built by [Victor Shulga](https://victorshulga.com), Fractional CRO for B2B service companies. Full skill stack: [victorshulga.com/stack](https://victorshulga.com/stack/).
